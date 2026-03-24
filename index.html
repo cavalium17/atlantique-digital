@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert WordPress & GEO à La Rochelle | Atlantique Digital 2026</title>
+    <meta name="description" content="Atlantique Digital : Leader en maintenance WordPress sécurisée et Generative Engine Optimization (GEO) en Charente-Maritime. Boostez votre visibilité sur Google et les IA.">
+    
+	<script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="icon" type="image/png" href="Icone.png">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        
+        :root { --primary: #2563eb; --accent: #3b82f6; --dark: #0f172a; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: #0f172a; background-color: #f8fafc; cursor: none; }
+
+        /* Style du curseur personnalisé */
+        #cursor { width: 20px; height: 20px; background: var(--primary); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.1s ease, background 0.3s ease; mix-blend-mode: difference; }
+        .cursor-hover { transform: scale(4); background: rgba(37, 99, 235, 0.2) !important; }
+
+        /* Effets de design (Glassmorphism, Bento, Cyber Scan) */
+        .glass-nav { background: rgba(255, 255, 255, 0.7) !important; backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+        .hero-gradient { background: radial-gradient(70% 70% at 50% 50%, rgba(37, 99, 235, 0.05) 0%, transparent 100%); }
+        .bento-card { transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); border: 1px solid rgba(226, 232, 240, 0.8); }
+        .bento-card:hover { transform: translateY(-10px) scale(1.01); box-shadow: 0 40px 80px -20px rgba(15, 23, 42, 0.1); border-color: var(--primary); }
+        @keyframes scan { 0% { top: -10%; } 100% { top: 110%; } }
+        .scanner { position: absolute; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #ef4444, transparent); animation: scan 3s linear infinite; }
+        .reveal-text { background: linear-gradient(to right, #0f172a, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Logique d'affichage de la FAQ */
+        .faq-answer { max-height: 0; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); opacity: 0; }
+        .faq-item.active .faq-answer { max-height: 200px; opacity: 1; margin-top: 1.5rem; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); color: #2563eb; }
+        .faq-item { border: 1px solid rgba(226, 232, 240, 0.8); transition: all 0.3s ease; }
+        .faq-item:hover { border-color: #2563eb; }
+    </style>
+</head>
+<body>
+
+    <div id="cursor" class="hidden md:block"></div>
+
+    <nav class="fixed w-full z-[100] glass-nav py-5 px-6">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-slate-900 rounded-2xl flex items-center justify-center shadow-2xl rotate-3 hover:rotate-0 transition-transform">
+                <svg viewBox="0 0 40 40" class="w-7 h-7 stroke-white fill-none">
+                    <path d="M10 28L20 12L30 28" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="hidden sm:block">
+                <span class="text-xl font-extrabold tracking-tighter text-slate-900 block leading-none">
+                    ATLANTIQUE<span class="text-blue-600">DIGITAL</span>
+                </span>
+                <span class="text-[10px] uppercase font-black tracking-[0.3em] text-slate-400">
+                    Agence Web
+                </span>
+            </div>
+        </div>
+
+        <!-- Partie droite -->
+        <div class="flex items-center gap-4">
+
+            <!-- Menu desktop -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#services" class="text-[11px] font-black uppercase tracking-widest text-slate-500 hover:text-blue-600 transition">Services</a>
+                <a href="#realisations" class="text-[11px] font-black uppercase tracking-widest text-slate-500 hover:text-blue-600 transition">Portfolio</a>
+                <a href="#tarifs" class="text-[11px] font-black uppercase tracking-widest text-slate-500 hover:text-blue-600 transition">Tarifs</a>
+                <a href="#faq" class="text-[11px] font-black uppercase tracking-widest text-slate-500 hover:text-blue-600 transition">FAQ</a>
+                <a href="#contact" class="bg-slate-900 text-white px-7 py-3 rounded-full text-[11px] font-black uppercase tracking-widest hover:bg-blue-600 transition-colors shadow-xl">
+                    Audit Offert
+                </a>
+            </div>
+
+            <!-- Burger mobile -->
+            <button id="menu-open" class="md:hidden text-slate-900 text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+
+        </div>
+
+    </div>
+</nav>
+<div id="mobileMenu" aria-hidden="true"
+class="fixed inset-0 bg-slate-900/95 backdrop-blur-2xl z-[200] flex flex-col 
+transition-all duration-500 ease-out transform translate-x-full opacity-0 pointer-events-none md:hidden">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center p-6 border-b border-white/10">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">A</div>
+            <span class="text-white font-bold tracking-tight uppercase text-sm">Atlantique Digital</span>
+        </div>
+        <button id="menu-close" class="text-white text-3xl">&times;</button>
+    </div>
+
+    <!-- CONTENU -->
+    <div class="flex-1 overflow-y-auto px-6 py-8 flex flex-col gap-8">
+
+        <!-- 🔴 BADGE URGENCE -->
+        <div class="bg-blue-600/20 border border-blue-500/30 rounded-2xl p-4">
+            <div class="flex items-center gap-2 text-blue-400 text-xs font-bold uppercase mb-1">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                Disponible cette semaine
+            </div>
+            <p class="text-white text-sm font-medium">Audit gratuit ouvert</p>
+        </div>
+
+        <!-- ⚡ SELECTEUR DE DOULEUR -->
+        <div class="grid gap-3">
+            <p class="text-white/50 text-[10px] font-bold uppercase tracking-wider">Besoin urgent ?</p>
+
+            <a href="#contact" class="mobile-link bg-white text-slate-900 p-4 rounded-xl font-bold text-sm flex items-center gap-3">
+                <i class="fas fa-biohazard text-red-500"></i>
+                Mon site est lent ou piraté
+            </a>
+
+            <a href="#contact" class="mobile-link bg-slate-800 text-white p-4 rounded-xl font-bold text-sm flex items-center gap-3 border border-white/10">
+                <i class="fas fa-magic text-blue-400"></i>
+                Je veux apparaître sur l'IA
+            </a>
+        </div>
+
+        <!-- 📱 NAV CLASSIQUE -->
+        <nav class="flex flex-col gap-6 text-white text-lg font-bold">
+            <a href="#services" class="mobile-link flex justify-between">Services <i class="fas fa-chevron-right text-blue-500"></i></a>
+            <a href="#realisations" class="mobile-link flex justify-between">Portfolio <i class="fas fa-chevron-right text-blue-500"></i></a>
+            <a href="#tarifs" class="mobile-link flex justify-between">Tarifs <i class="fas fa-chevron-right text-blue-500"></i></a>
+            <a href="#faq" class="mobile-link flex justify-between">FAQ <i class="fas fa-chevron-right text-blue-500"></i></a>
+        </nav>
+
+        <!-- 📞 CONTACT + PREUVE -->
+        <div class="mt-auto pt-8 border-t border-white/10 flex flex-col gap-6">
+
+            <!-- Bouton appel -->
+            <a href="tel:+336XXXXXXXX" class="bg-blue-600 text-white w-full py-4 rounded-2xl font-bold text-center flex items-center justify-center gap-3">
+                <i class="fas fa-phone-alt"></i>
+                Appeler un expert
+            </a>
+
+            <!-- Preuve sociale -->
+            <div class="text-center">
+                <div class="flex justify-center gap-1 text-yellow-400 mb-1">
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                </div>
+                <p class="text-white/60 text-[10px] font-medium italic">
+                    "Réactif et ultra efficace" - 4.9/5 clients locaux
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+    <main class="hero-gradient">
+        <section class="min-h-screen flex items-center pt-20 px-6">
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+                <div data-aos="fade-right">
+                    <div class="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full mb-10">
+                        <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span></span>
+                        <span class="text-[10px] font-black uppercase tracking-widest text-blue-600">Disponible pour de nouveaux projets</span>
+                    </div>
+                    <h1 class="text-6xl lg:text-8xl font-black leading-[0.9] mb-8 text-slate-900 tracking-tighter">
+                        Propulsez votre site <span class="reveal-text">WordPress.</span>
+                    </h1>
+                    <p class="text-xl text-slate-500 mb-12 max-w-lg leading-relaxed font-medium">
+    Expertise en <strong class="text-slate-900">conception WordPress</strong> haute performance. Nous bâtissons des infrastructures sécurisées, optimisées pour la conversion locale et les <span class="text-blue-600 font-bold">moteurs de recherche.</span>
+</p>
+                    <div class="flex flex-col sm:flex-row gap-6">
+                        <a href="#contact" class="bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-blue-700 transition shadow-2xl shadow-blue-200 text-center">Démarrer maintenant</a>
+                        <div class="flex items-center gap-4 px-6">
+                            <div class="flex -space-x-3">
+                                <img src="https://i.pravatar.cc/100?u=1" class="w-10 h-10 rounded-full border-4 border-white">
+                                <img src="https://i.pravatar.cc/100?u=2" class="w-10 h-10 rounded-full border-4 border-white">
+                                <img src="https://i.pravatar.cc/100?u=3" class="w-10 h-10 rounded-full border-4 border-white">
+                            </div>
+                            <span class="text-sm font-bold text-slate-600">+150 clients satisfaits</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="absolute -inset-4 bg-blue-600/10 rounded-[4rem] blur-3xl"></div>
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" class="relative z-10 rounded-[3.5rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 border-8 border-white">
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+        <div data-aos="fade-up">
+            <p class="text-5xl font-black text-white mb-2" data-count="98">0%</p>
+            <p class="text-blue-400 text-[10px] font-black uppercase tracking-widest">Vitesse d'affichage mobile</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100">
+            <p class="text-5xl font-black text-white mb-2" data-count="100">0%</p>
+            <p class="text-blue-400 text-[10px] font-black uppercase tracking-widest">Temps de présence en ligne</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="200">
+            <p class="text-5xl font-black text-white mb-2" data-count="4">0h</p>
+            <p class="text-blue-400 text-[10px] font-black uppercase tracking-widest">Intervention max. en cas d'urgence</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="300">
+            <p class="text-5xl font-black text-white mb-2" data-count="12">0x</p>
+            <p class="text-blue-400 text-[10px] font-black uppercase tracking-widest">Multiplicateur de visibilité locale</p>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            
+            <div>
+                <h2 class="text-blue-600 font-black text-xs uppercase tracking-[0.4em] mb-4">Expertise Locale</h2>
+                <h3 class="text-5xl font-black text-slate-900 tracking-tighter mb-8 leading-tight">
+                    Bien plus qu'un site.<br>Une croissance maîtrisée.
+                </h3>
+                <p class="text-lg text-slate-500 mb-10 leading-relaxed font-medium">
+                    Que vous soyez un établissement historique de Rochefort, un cabinet immobilier sur l'Île de Ré ou un praticien bien-être à Saintes, nous propulsons tous les talents de Charente-Maritime. Le web ne doit pas être une charge technique, mais un levier de chiffre d'affaires.
+                </p>
+                
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center flex-shrink-0 text-blue-600">
+                            <i class="fas fa-magic text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-slate-900 uppercase tracking-tight mb-2">Conception WordPress Premium</h4>
+                            <p class="text-sm text-slate-500 leading-relaxed font-medium">Nous créons votre identité visuelle et votre structure web de A à Z, sans aucun frais de création initial.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center flex-shrink-0 text-indigo-600">
+                            <i class="fas fa-brain text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-slate-900 uppercase tracking-tight mb-2">Visibilité IA (GEO)</h4>
+                            <p class="text-sm text-slate-500 leading-relaxed font-medium">Votre établissement devient la réponse prioritaire de ChatGPT et Gemini pour vos futurs clients locaux.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 bg-emerald-50 rounded-2xl flex items-center justify-center flex-shrink-0 text-emerald-600">
+                            <i class="fas fa-shield-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-slate-900 uppercase tracking-tight mb-2">Maintenance & Sérénité</h4>
+                            <p class="text-sm text-slate-500 leading-relaxed font-medium">Mises à jour, sécurité, hébergement et sauvegardes : nous gérons tout le technique pour vous.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="aspect-square bg-slate-900 rounded-[4rem] overflow-hidden shadow-2xl rotate-3 transition-transform hover:rotate-0 duration-700">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Interface Dashboard" class="w-full h-full object-cover opacity-60">
+                </div>
+                <div class="absolute -bottom-10 -left-10 bg-white p-8 rounded-[2rem] shadow-2xl border border-slate-100 max-w-[200px]" data-aos="zoom-in">
+                    <p class="text-3xl font-black text-blue-600 mb-1">24/7</p>
+                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Surveillance de votre site</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <section id="realisations" class="py-32 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-20">
+                    <h2 class="text-blue-600 font-black text-xs uppercase tracking-[0.4em] mb-4">Études de cas critiques</h2>
+                    <h3 class="text-5xl font-black text-slate-900 tracking-tighter">Des résultats tangibles.</h3>
+                </div>
+                
+                <div class="grid lg:grid-cols-12 gap-8">
+                    <div class="lg:col-span-8 bento-card bg-white rounded-[3.5rem] p-12 flex flex-col md:flex-row gap-12 items-center overflow-hidden" data-aos="fade-up">
+                        <div class="flex-1 text-left">
+                            <span class="bg-blue-50 text-blue-600 px-4 py-1 rounded-full text-[10px] font-black uppercase mb-6 inline-block tracking-widest">SEO Local & Booking</span>
+                            <h4 class="text-4xl font-black text-slate-900 mb-6 italic">Bistrot du Port</h4>
+                            <p class="text-slate-500 mb-10 leading-relaxed">Suppression totale des frais de commission (1500€/mois) grâce à un moteur de réservation propriétaire ultra-rapide.</p>
+                            <a href="etude-de-cas-bistrot-du-port.html" class="flex items-center gap-3 text-slate-900 font-black uppercase text-xs tracking-widest group">
+                                <span class="w-12 h-12 bg-slate-900 text-white rounded-full flex items-center justify-center group-hover:bg-blue-600 transition-colors"><i class="fas fa-plus"></i></span> Découvrir l'analyse
+                            </a>
+                        </div>
+                        <div class="w-full md:w-1/2 bg-blue-600 rounded-3xl h-64 flex items-center justify-center p-8 relative overflow-hidden shadow-inner">
+                            <div class="bg-white p-6 rounded-2xl shadow-2xl w-full rotate-3 hover:rotate-0 transition-transform duration-500">
+                                <i class="fas fa-check-circle text-blue-600 text-3xl mb-2"></i>
+                                <p class="font-bold text-slate-900">Réservation Confirmée</p>
+                                <p class="text-[10px] text-slate-400">Commission : 0.00€</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-4 bento-card bg-slate-900 rounded-[3.5rem] p-12 text-white flex flex-col relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <div class="scanner"></div>
+                        <span class="bg-red-500/20 text-red-400 border border-red-500/30 px-4 py-1 rounded-full text-[10px] font-black uppercase mb-8 inline-block tracking-widest">Urgence Cyber</span>
+                        <h4 class="text-3xl font-black mb-6 leading-tight italic">Nettoyage Post-Piratage</h4>
+                        <p class="text-slate-400 text-sm mb-12">Restauration complète et levée de blacklist Google en moins de 4h pour une agence immobilière.</p>
+                        <div class="mt-auto">
+                            <i class="fas fa-shield-virus text-6xl text-red-500/20 absolute -bottom-4 -right-4"></i>
+                            <a href="etude-de-cas-vieux-port-patrimoine.html" class="block w-full text-center py-4 rounded-2xl bg-white/10 hover:bg-white/20 transition-colors font-bold text-xs uppercase tracking-widest">Découvrez notre protocole d'intervention</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tarifs" class="py-32 px-6 bg-white border-y border-slate-100">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20">
+                    <h2 class="text-blue-600 font-black text-xs uppercase tracking-[0.4em] mb-4">Investissement & ROI</h2>
+                    <h3 class="text-5xl font-black text-slate-900 tracking-tighter">Des forfaits sans surprise.</h3>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bento-card bg-slate-50 p-10 rounded-[3rem] flex flex-col border border-slate-100 shadow-sm" data-aos="fade-up">
+    <h4 class="text-xl font-extrabold mb-2 uppercase tracking-tight text-slate-900">Pack Sérénité</h4>
+    <p class="text-blue-600 text-[10px] font-black mb-8 uppercase tracking-[0.2em]">Présence & Tranquillité</p>
+    
+    <div class="mb-8">
+        <span class="text-5xl font-black tracking-tighter italic text-slate-900">89€</span>
+        <span class="text-slate-400 text-sm font-bold">/mois HT</span>
+        <p class="text-[10px] text-slate-400 mt-2 font-bold uppercase italic underline decoration-blue-500/30">Frais de création : 0€</p>
+    </div>
+
+    <ul class="space-y-4 mb-10 flex-1">
+        <li class="flex items-start gap-3 text-sm font-bold text-slate-600">
+            <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+            <span>Nom de domaine & Hébergement Pro</span>
+        </li>
+        <li class="flex items-start gap-3 text-sm font-bold text-slate-600">
+            <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+            <span>Maintenance & Sécurité 24h/24</span>
+        </li>
+        <li class="flex items-start gap-3 text-sm font-bold text-slate-600">
+            <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+            <span>Modifications de texte incluses</span>
+        </li>
+        <li class="flex items-start gap-3 text-sm font-bold text-slate-600">
+            <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+            <span>Optimisation vitesse (PageSpeed)</span>
+        </li>
+    </ul>
+
+    <a href="#contact" class="text-center py-4 bg-slate-900 text-white rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-blue-600 transition shadow-lg shadow-slate-200">
+        Lancer ma présence web
+    </a>
+</div>
+                    <div class="bento-card bg-slate-900 p-10 rounded-[3rem] flex flex-col relative scale-105 shadow-2xl border-2 border-blue-500/50" data-aos="fade-up" data-aos-delay="100">
+    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-xl">
+        Le plus choisi
+    </div>
+
+    <h4 class="text-xl font-extrabold text-white mb-2 uppercase tracking-tight italic">Pack Croissance</h4>
+    <p class="text-blue-400 text-[10px] font-black mb-8 uppercase tracking-[0.2em]">Performance & Visibilité</p>
+    
+    <div class="mb-8 text-white">
+        <span class="text-6xl font-black tracking-tighter italic">149€</span>
+        <span class="text-slate-400 text-sm font-bold">/mois HT</span>
+        <p class="text-[10px] text-blue-400 mt-2 font-black uppercase italic">Création Premium : 0€</p>
+    </div>
+
+    <ul class="space-y-4 mb-10 flex-1">
+        <li class="flex items-start gap-3 text-sm font-bold text-slate-300">
+            <i class="fas fa-rocket text-blue-500 mt-1"></i>
+            <span>Optimisation pour être cité par les moteurs de recherche IA</span>
+        </li>
+        <li class="flex items-start gap-3 text-sm font-bold text-slate-300">
+            <i class="fas fa-bolt text-blue-500 mt-1"></i>
+            <span>Vitesse d'affichage ultra-rapide (98%+ PageSpeed)</span>
+        </li>
+        <li class="flex items-start gap-3 text-sm font-bold text-slate-300">
+            <i class="fas fa-chart-line text-blue-500 mt-1"></i>
+            <span>Suivi mensuel de votre visibilité locale</span>
+        </li>
+        <li class="flex items-start gap-3 text-sm font-bold text-slate-400 italic">
+            <i class="fas fa-plus-circle text-slate-500 mt-1"></i>
+            <span>Inclut tous les avantages du Pack Sérénité</span>
+        </li>
+    </ul>
+
+    <a href="#contact" class="text-center py-5 bg-blue-600 text-white rounded-2xl font-black text-[11px] uppercase tracking-widest hover:bg-white hover:text-blue-600 transition shadow-lg shadow-blue-500/20">
+        Je veux dominer mon marché
+    </a>
+</div>
+                    <div class="bento-card bg-slate-50 p-10 rounded-[3rem] flex flex-col border border-slate-100 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+    <h4 class="text-xl font-extrabold mb-2 uppercase tracking-tight text-slate-900">Sur-Mesure</h4>
+    <p class="text-slate-400 text-[10px] font-black mb-8 uppercase tracking-[0.2em]">Projets Spécifiques & Métiers</p>
+    
+    <div class="mb-8 text-slate-900">
+        <span class="text-5xl font-black tracking-tighter italic">Sur devis</span>
+        <p class="text-[10px] text-slate-400 mt-2 font-bold uppercase italic">Accompagnement Premium</p>
+    </div>
+
+    <ul class="space-y-4 mb-10 flex-1">
+        <li class="flex items-start gap-3 text-sm font-bold text-slate-600">
+            <i class="fas fa-plus-circle text-blue-500 mt-1"></i>
+            <span>Développement de fonctionnalités spécifiques (API, E-commerce)</span>
+        </li>
+        <li class="flex items-start gap-3 text-sm font-bold text-slate-600">
+            <i class="fas fa-plus-circle text-blue-500 mt-1"></i>
+            <span>Système de réservation ou prise de RDV complexe</span>
+        </li>
+        <li class="flex items-start gap-3 text-sm font-bold text-slate-600">
+            <i class="fas fa-plus-circle text-blue-500 mt-1"></i>
+            <span>Conseil en stratégie digitale & marketing local</span>
+        </li>
+        <li class="flex items-start gap-3 text-sm font-bold text-slate-400 italic">
+            <i class="fas fa-star text-blue-400 mt-1"></i>
+            <span>Support prioritaire & Accès direct expert</span>
+        </li>
+    </ul>
+
+    <a href="#contact" class="text-center py-4 border-2 border-slate-900 text-slate-900 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-slate-900 hover:text-white transition">
+        Parlons de votre projet
+    </a>
+</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-32 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-6">
+        
+        <div class="text-center mb-20" data-aos="fade-up">
+            <h2 class="text-blue-600 font-black text-xs uppercase tracking-[0.4em] mb-4">Des questions ?</h2>
+            <h3 class="text-5xl font-black text-slate-900 tracking-tighter">Tout ce qu'il faut savoir</h3>
+<br>
+            <p class="text-slate-500 font-medium max-w-2xl mx-auto">
+                De La Rochelle à Saintes, nous accompagnons les entreprises du 17 avec une transparence totale sur nos services et notre modèle d'abonnement.
+            </p>
+        </div>
+
+        <div class="space-y-4">
+            
+            <div class="faq-item bg-white border border-slate-200 rounded-[2rem] overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5" data-aos="fade-up">
+                <button class="faq-btn w-full px-10 py-8 flex items-center justify-between text-left group">
+                    <span class="text-lg font-black text-slate-900 pr-8 tracking-tight italic uppercase">Pourquoi le site est-il à 0€ à la commande ?</span>
+                    <i class="fas fa-plus text-blue-600 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                    <div class="px-10 pb-10 text-slate-500 leading-relaxed font-medium">
+                        C'est notre engagement de proximité. Nous portons l'investissement initial de conception WordPress pour préserver votre trésorerie. Vous ne payez que l'abonnement mensuel pour le service, la maintenance et la visibilité IA (GEO). C'est le modèle idéal pour lancer votre projet en Charente-Maritime sans capital de départ.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white border border-slate-200 rounded-[2rem] overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5" data-aos="fade-up" data-aos-delay="50">
+                <button class="faq-btn w-full px-10 py-8 flex items-center justify-between text-left group">
+                    <span class="text-lg font-black text-slate-900 pr-8 tracking-tight italic uppercase">Qu'est-ce que l'optimisation IA (GEO) incluse ?</span>
+                    <i class="fas fa-plus text-blue-600 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                    <div class="px-10 pb-10 text-slate-500 leading-relaxed font-medium">
+                        Le GEO (Generative Engine Optimization) structure votre site pour qu'il soit la source privilégiée des IA comme ChatGPT, Gemini ou Perplexity. Si un client demande à son téléphone : "Quel est le meilleur agent immobilier à Rochefort ?", nous travaillons pour que votre établissement soit cité en priorité.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white border border-slate-200 rounded-[2rem] overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5" data-aos="fade-up" data-aos-delay="100">
+                <button class="faq-btn w-full px-10 py-8 flex items-center justify-between text-left group">
+                    <span class="text-lg font-black text-slate-900 pr-8 tracking-tight italic uppercase">Que comprend la maintenance chaque mois ?</span>
+                    <i class="fas fa-plus text-blue-600 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                    <div class="px-10 pb-10 text-slate-500 leading-relaxed font-medium">
+                        Nous gérons tout le technique : mises à jour critiques WordPress, hébergement haute performance, pare-feu anti-piratage et sauvegardes quotidiennes. Nous assurons un temps de présence en ligne de 100% et une intervention en moins de 4h en cas d'urgence critique.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white border border-slate-200 rounded-[2rem] overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5" data-aos="fade-up" data-aos-delay="150">
+                <button class="faq-btn w-full px-10 py-8 flex items-center justify-between text-left group">
+                    <span class="text-lg font-black text-slate-900 pr-8 tracking-tight italic uppercase">Suis-je propriétaire de mon domaine et de mes données ?</span>
+                    <i class="fas fa-plus text-blue-600 transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                    <div class="px-10 pb-10 text-slate-500 leading-relaxed font-medium">
+                        Absolument. Vous êtes le titulaire légal de votre nom de domaine et propriétaire de vos contenus (photos, textes). Nous fournissons la technologie sous forme de licence d'usage. À la fin de votre engagement, vous gardez votre adresse web et pouvez racheter la structure complète du site si vous souhaitez nous quitter.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
+            
+            // Ferme les autres items (optionnel)
+            // document.querySelectorAll('.faq-content').forEach(c => { if(c !== content) c.style.maxHeight = null; });
+
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                icon.style.transform = 'rotate(45deg)';
+            }
+        });
+    });
+</script>
+
+        <section id="blog" class="py-32 bg-white">
+            <div class="max-w-4xl mx-auto px-6">
+                <article class="bg-white p-12 md:p-20 rounded-[4rem] shadow-sm border border-slate-100 relative overflow-hidden" data-aos="fade-up">
+                    <div class="absolute top-0 right-0 p-12 text-blue-100"><i class="fas fa-quote-right text-8xl"></i></div>
+                    <header class="relative z-10 mb-12">
+                        <span class="text-blue-600 font-black text-[10px] uppercase tracking-[0.4em] mb-4 block">Conseil Expert 2026</span>
+                        <h2 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter leading-none mb-8">Comment sécuriser WordPress après un piratage ?</h2>
+                    </header>
+                    <div class="prose prose-slate prose-lg text-slate-500 leading-relaxed space-y-8">
+                        <p class="text-xl font-medium text-slate-700 italic border-l-4 border-blue-600 pl-6">"Le piratage n'est pas une fatalité, mais une opportunité de reconstruire une forteresse digitale."</p>
+                        <p>Ne vous contentez pas de changer les mots de passe. Supprimez les dossiers <code>wp-admin</code> et <code>wp-includes</code> et remplacez-les par des copies saines.</p>
+                    </div>
+                    <footer class="mt-16 pt-12 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-8">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-slate-900 rounded-2xl flex items-center justify-center text-white font-black">AD</div>
+                            <div><p class="font-bold text-slate-900">Écrit par l'équipe technique</p><p class="text-xs text-slate-400 tracking-widest uppercase">Atlantique Digital</p></div>
+                        </div>
+                        <a href="#contact" class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl shadow-blue-200">Audit gratuit</a>
+                    </footer>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="py-32 bg-slate-900 relative overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px]"></div>
+    <div class="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px]"></div>
+
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+        
+        <div data-aos="fade-up">
+            <h2 class="text-blue-400 font-black text-[10px] uppercase tracking-[0.5em] mb-6 italic">
+                Propulsion Digitale Charente-Maritime
+            </h2>
+            
+            <h3 class="text-5xl md:text-7xl font-black text-white tracking-tighter mb-8 leading-none italic">
+                Activez votre <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">visibilité en 2026.</span>
+            </h3>
+
+            <p class="text-xl text-slate-400 font-medium mb-12 max-w-2xl mx-auto leading-relaxed">
+                De <span class="text-white">La Rochelle</span> à <span class="text-white">Royan</span>, recevez votre <span class="text-emerald-400 font-bold">audit gratuit</span> et lancez votre site à haute performance.
+            </p>
+        </div>
+
+        <form id="whatsappForm" class="bg-white/5 p-2 rounded-[2.5rem] border border-white/10 backdrop-blur-md shadow-2xl max-w-2xl mx-auto group focus-within:border-emerald-500/50 transition-all duration-500 hover:scale-[1.02]">
+            <div class="flex flex-col md:flex-row gap-2">
+                <input type="tel" id="userPhone" placeholder="Votre numéro de mobile..." required
+                    class="flex-1 bg-transparent border-none px-8 py-6 text-white placeholder-slate-500 text-lg font-bold outline-none focus:outline-none focus:ring-0 focus:border-transparent">
+                
+                <button type="submit" 
+                    class="bg-blue-600 hover:bg-emerald-500 text-white px-10 py-6 rounded-[2rem] font-black text-xs uppercase tracking-[0.2em] transition-all duration-500 whitespace-nowrap shadow-xl shadow-blue-500/20 flex items-center justify-center gap-3 group-hover:shadow-emerald-500/20">
+                    <span>Recevoir mon audit</span> <i class="fab fa-whatsapp text-xl"></i>
+                </button>
+            </div>
+        </form>
+
+        <div class="mt-8 space-y-3">
+            <p class="text-[9px] text-slate-500 font-black uppercase tracking-[0.3em] flex items-center justify-center gap-2">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                Audit gratuit & sans engagement • Réponse sous 2h
+            </p>
+            <p class="text-[8px] text-slate-600 font-medium uppercase tracking-[0.2em]">
+                🔒 Vos données sont protégées et uniquement utilisées pour cet échange.
+            </p>
+        </div>
+    </div>
+</section>
+
+<script>
+    // ON NE GARDE QU'UN SEUL BLOC SCRIPT POUR TOUT LE FORMULAIRE
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // 1. Ton numéro (SANS ESPACES, SANS +, SANS PARENTHÈSES)
+        const monNumero = "33661536117"; 
+        
+        // 2. Le numéro du client (on nettoie tout ce qui n'est pas un chiffre)
+        const rawPhone = document.getElementById('userPhone').value;
+        const cleanClientPhone = rawPhone.replace(/\D/g, ''); 
+        
+        // 3. Ton message personnalisé
+        const messageText = `Bonjour ! Je viens de laisser mon numéro (${cleanClientPhone}) sur votre site. Je souhaite recevoir mon audit gratuit.`;
+        const encodedText = encodeURIComponent(messageText);
+        
+        // 4. Animation du bouton pour le feedback visuel
+        const btn = this.querySelector('button');
+        const originalContent = btn.innerHTML;
+        btn.innerHTML = 'Connexion... <i class="fas fa-circle-notch animate-spin"></i>';
+        
+        // 5. Redirection propre (api.whatsapp.com est plus stable sur les navigateurs mobiles)
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${monNumero}&text=${encodedText}`;
+        
+        setTimeout(() => {
+            window.location.href = whatsappUrl; 
+            // On remet le bouton à l'état initial après un court instant
+            setTimeout(() => { btn.innerHTML = originalContent; }, 1000);
+        }, 500);
+    });
+</script>
+
+    <section id="footer" class="py-12 bg-white border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-10">
+            
+            <div class="text-xl font-black tracking-tighter uppercase">
+                <span class="text-xl font-extrabold tracking-tighter text-slate-900 block leading-none">
+                    ATLANTIQUE<span class="text-blue-600">DIGITAL</span>
+                </span>
+                <span class="block text-[9px] font-bold text-slate-400 not-italic tracking-[0.2em] mt-1">
+                    Rochefort • La Rochelle • Saintes
+                </span>
+            </div>
+
+            <nav class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-[10px] font-black uppercase tracking-widest text-slate-500">
+                <a href="#services" class="hover:text-blue-600 transition-colors italic">Création 0€</a>
+                <a href="#services" class="hover:text-blue-600 transition-colors italic">IA & GEO</a>
+                <a href="#services" class="hover:text-blue-600 transition-colors italic">Maintenance</a>
+                <a href="tel:+336XXXXXXXX" class="hover:text-emerald-500 transition-colors text-blue-600">Contact Direct</a>
+            </nav>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-8 text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">
+    <a href="mentions-legales.html" class="hover:text-blue-600 transition-all border-b border-transparent hover:border-blue-600 pb-1">Mentions Légales</a>
+    
+    <a href="politique-confidentialite.html" class="hover:text-blue-600 transition-all border-b border-transparent hover:border-blue-600 pb-1">Confidentialité (RGPD)</a>
+    
+    <a href="cgv.html" class="hover:text-blue-600 transition-all border-b border-transparent hover:border-blue-600 pb-1">CGV & Abonnements</a>
+</div>
+
+        <footer class="pt-8 text-center text-[10px] font-black uppercase tracking-[0.5em] text-slate-400 border-t border-slate-50">
+            © 2026 Atlantique Digital | Performance WordPress Haute Performance
+        </footer>
+
+    </div>
+</section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Script pour l'ouverture/fermeture des questions FAQ
+        function toggleFaq(element) {
+            const isActive = element.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            if (!isActive) {
+                element.classList.add('active');
+            }
+        }
+
+        // Script pour suivre le mouvement du curseur personnalisé
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Script pour agrandir le curseur au survol des éléments cliquables
+        const hoverElements = document.querySelectorAll('a, button, .bento-card, .faq-item');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+        });
+
+        // Script d'animation des compteurs de statistiques au scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const count = parseInt(target.getAttribute('data-count'));
+                    let current = 0;
+                    const timer = setInterval(() => {
+                        current += Math.ceil(count / 50);
+                        if (current >= count) { current = count; clearInterval(timer); }
+                        target.innerText = current + (target.innerText.includes('%') ? '%' : target.innerText.includes('h') ? 'h' : 'x');
+                    }, 30);
+                }
+            });
+        });
+        document.querySelectorAll('[data-count]').forEach(el => observer.observe(el));
+    </script>
+<script>
+const menuOpen = document.getElementById('menu-open');
+const menuClose = document.getElementById('menu-close');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+function openMenu() {
+    mobileMenu.classList.remove('translate-x-full', 'opacity-0', 'pointer-events-none');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+    mobileMenu.classList.add('translate-x-full', 'opacity-0', 'pointer-events-none');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
+
+menuOpen.addEventListener('click', openMenu);
+menuClose.addEventListener('click', closeMenu);
+
+mobileLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
+
+mobileMenu.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) {
+        closeMenu();
+    }
+});
+</script>
+</body>
+</html>
