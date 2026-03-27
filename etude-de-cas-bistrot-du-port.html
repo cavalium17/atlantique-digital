@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>SEO Local & Réservation WordPress : Étude de cas Bistrot du Port | La Rochelle</title>
+    <meta name="description" content="Comment Atlantique Digital a supprimé 18 000€ de commissions annuelles pour un restaurant à La Rochelle via une architecture WordPress optimisée et une stratégie SEO local.">
+    <meta name="keywords" content="Expert WordPress La Rochelle, SEO Local Restauration, Réservation sans commission, Agence Web Charente-Maritime, GEO IA 2026">
+    <link rel="canonical" href="https://atlantique-digital.fr/etude-de-cas-bistrot-du-port" />
+
+    <meta property="og:title" content="Optimisation ROI WordPress : Cas Bistrot du Port | Atlantique Digital">
+    <meta property="og:description" content="Transformation digitale d'un restaurant rochelais : de la dépendance aux plateformes à la souveraineté numérique.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://atlantique-digital.fr/etude-de-cas-bistrot-du-port">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CaseStudy",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://atlantique-digital.fr/etude-case-bistrot-du-port"
+      },
+      "name": "Suppression des commissions de réservation - Bistrot du Port",
+      "author": {
+        "@type": "Organization",
+        "name": "Atlantique Digital"
+      },
+      "description": "Stratégie de souveraineté digitale permettant d'économiser 1500€/mois en commissions de réservation via WordPress.",
+      "about": ["SEO Local", "WordPress Performance", "La Rochelle"],
+      "result": [
+        {
+          "@type": "PropertyValue",
+          "name": "Économie annuelle",
+          "value": "18000€"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Score Google PageSpeed",
+          "value": "99/100"
+        }
+      ]
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    
+    /* 1. CORRECTIF DE DÉBORDEMENT MOBILE */
+    html, body { 
+        font-family: 'Plus Jakarta Sans', sans-serif; 
+        color: #0f172a; 
+        max-width: 100%;
+        overflow-x: hidden; /* Empêche le site de glisser vers la droite */
+        position: relative;
+    }
+
+    /* Force les textes à ne pas sortir de l'écran */
+    h1, h2, h3, p {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+
+    /* 2. TES STYLES EXISTANTS */
+    .hero-gradient { background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.08), transparent); }
+
+    .btn-header-responsive {
+        font-size: 7px !important; 
+        white-space: nowrap;
+    }
+
+    @media (max-width: 767px) {
+    header {
+        /* On rend le fond totalement opaque pour bloquer la transparence */
+        background-color: #ffffff !important; 
+        /* On ajoute une ombre pour bien le détacher du contenu qui défile */
+        shadow: 0 2px 10px rgba(0,0,0,0.1);
+        border-bottom: 1px solid #e2e8f0;
+    }
+</style>
+</head>
+<body class="bg-white">
+
+    <nav class="fixed w-full z-[100] glass-nav py-5 px-6">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-slate-900 rounded-2xl flex items-center justify-center shadow-2xl rotate-3 hover:rotate-0 transition-transform">
+                <svg viewBox="0 0 40 40" class="w-7 h-7 stroke-white fill-none">
+                    <path d="M10 28L20 12L30 28" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-xl font-extrabold tracking-tighter text-slate-900 block leading-none">
+                    ATLANTIQUE<span class="text-blue-600">DIGITAL</span>
+                </span>
+                <span class="text-[10px] uppercase font-black tracking-[0.3em] text-slate-400">
+                    Agence Web
+                </span>
+            </div>
+        </div>
+
+        <!-- Partie droite -->
+        <div class="flex items-center gap-4">
+
+            <!-- Menu desktop -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#services" class="text-[11px] font-black uppercase tracking-widest text-slate-500 hover:text-blue-600 transition">Services</a>
+                <a href="#realisations" class="text-[11px] font-black uppercase tracking-widest text-slate-500 hover:text-blue-600 transition">Portfolio</a>
+                <a href="#tarifs" class="text-[11px] font-black uppercase tracking-widest text-slate-500 hover:text-blue-600 transition">Tarifs</a>
+                <a href="#faq" class="text-[11px] font-black uppercase tracking-widest text-slate-500 hover:text-blue-600 transition">FAQ</a>
+                <a href="#contact" class="bg-slate-900 text-white px-7 py-3 rounded-full text-[11px] font-black uppercase tracking-widest hover:bg-blue-600 transition-colors shadow-xl">
+                    Audit Offert
+                </a>
+            </div>
+
+            <!-- Burger mobile -->
+            <button id="menu-open" class="md:hidden text-slate-900 text-2xl relative z-50">
+                <i class="fas fa-bars"></i>
+            </button>
+
+        </div>
+
+    </div>
+</nav>
+<div id="mobileMenu" aria-hidden="true"
+class="fixed inset-0 bg-slate-900/95 backdrop-blur-2xl z-[200] flex flex-col 
+transition-all duration-500 ease-out transform translate-x-full opacity-0 pointer-events-none md:hidden">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center p-6 border-b border-white/10">
+    <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center shadow-2xl rotate-3 hover:rotate-0 transition-transform">
+            <svg viewBox="0 0 40 40" class="w-7 h-7 stroke-white fill-none">
+                <path d="M10 28L20 12L30 28" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        
+        <div class="flex flex-col">
+            <span class="text-xl font-extrabold tracking-tighter text-white block leading-none uppercase">
+                ATLANTIQUE<span class="text-blue-400">DIGITAL</span>
+            </span>
+            <span class="text-[10px] uppercase font-black tracking-[0.3em] text-slate-400">
+                Agence Web
+            </span>
+        </div>
+    </div>
+
+    <button id="menu-close" class="text-white hover:text-blue-400 transition-colors">
+        <i class="fas fa-times text-2xl"></i>
+    </button>
+</div>
+
+    <!-- CONTENU -->
+    <div class="flex-1 overflow-y-auto px-6 py-8 flex flex-col gap-8">
+
+        <!-- 🔴 BADGE URGENCE -->
+        <div class="bg-blue-600/20 border border-blue-500/30 rounded-2xl p-4">
+            <div class="flex items-center gap-2 text-blue-400 text-xs font-bold uppercase mb-1">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                Disponible cette semaine
+            </div>
+            <p class="text-white text-sm font-medium">Audit gratuit ouvert</p>
+        </div>
+
+        <!-- ⚡ SELECTEUR DE DOULEUR -->
+        <div class="grid gap-3">
+            <p class="text-white/50 text-[10px] font-bold uppercase tracking-wider">Besoin urgent ?</p>
+
+            <a href="#contact" class="mobile-link bg-white text-slate-900 p-4 rounded-xl font-bold text-sm flex items-center gap-3">
+                <i class="fas fa-biohazard text-red-500"></i>
+                Mon site est lent ou piraté
+            </a>
+
+            <a href="#contact" class="mobile-link bg-slate-800 text-white p-4 rounded-xl font-bold text-sm flex items-center gap-3 border border-white/10">
+                <i class="fas fa-magic text-blue-400"></i>
+                Je veux apparaître sur l'IA
+            </a>
+        </div>
+
+        <!-- 📱 NAV CLASSIQUE -->
+        <nav class="flex flex-col gap-6 text-white text-lg font-bold">
+            <a href="#services" class="mobile-link flex justify-between">Services <i class="fas fa-chevron-right text-blue-500"></i></a>
+            <a href="#realisations" class="mobile-link flex justify-between">Portfolio <i class="fas fa-chevron-right text-blue-500"></i></a>
+            <a href="#tarifs" class="mobile-link flex justify-between">Tarifs <i class="fas fa-chevron-right text-blue-500"></i></a>
+            <a href="#faq" class="mobile-link flex justify-between">FAQ <i class="fas fa-chevron-right text-blue-500"></i></a>
+        </nav>
+
+        <!-- 📞 CONTACT + PREUVE -->
+        <div class="mt-auto pt-8 border-t border-white/10 flex flex-col gap-6">
+
+            <!-- Bouton appel -->
+            <a href="tel:+336XXXXXXXX" class="bg-blue-600 text-white w-full py-4 rounded-2xl font-bold text-center flex items-center justify-center gap-3">
+                <i class="fas fa-phone-alt"></i>
+                Appeler un expert
+            </a>
+
+            <!-- Preuve sociale -->
+            <div class="text-center">
+                <div class="flex justify-center gap-1 text-yellow-400 mb-1">
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                </div>
+                <p class="text-white/60 text-[10px] font-medium italic">
+                    "Réactif et ultra efficace" - 4.9/5 clients locaux
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+    <main class="pt-32">
+        <section class="hero-gradient pb-20 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-8 mt-5" data-aos="fade-down">
+                    <i class="fas fa-utensils"></i> Secteur Restauration & SEO Local
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight mb-8" data-aos="fade-up">
+                    Bistrot du Port : S'affranchir de <span class="text-blue-600">18&nbsp;000€ de commissions</span> annuelles.
+                </h1>
+                <p class="text-lg text-slate-600 leading-relaxed mb-12" data-aos="fade-up" data-aos-delay="100">
+                    Découvrez comment une stratégie combinant <strong>WordPress haute performance</strong> et <strong>SEO Local</strong> a permis à un établissement de La Rochelle de reprendre le contrôle total de ses réservations en 2026.
+                </p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-white p-6 rounded-[2rem] shadow-xl shadow-slate-100 border border-slate-50">
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Économie Mensuelle</p>
+                        <p class="text-2xl font-black text-blue-600">1 500 €</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-[2rem] shadow-xl shadow-slate-100 border border-slate-50">
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Commissions Tiers</p>
+                        <p class="text-2xl font-black text-blue-600">0%</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-[2rem] shadow-xl shadow-slate-100 border border-slate-50">
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Trafic SEO Direct</p>
+                        <p class="text-2xl font-black text-blue-600">+40%</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-[2rem] shadow-xl shadow-slate-100 border border-slate-50">
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Score Google</p>
+                        <p class="text-2xl font-black text-blue-600">99/100</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <article>
+            <section class="py-24 px-6 bg-slate-50">
+                <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+                    <div data-aos="fade-right">
+                        <h2 class="text-blue-600 font-bold text-sm uppercase tracking-widest mb-4">Le Challenge Business</h2>
+                        <h3 class="text-3xl font-extrabold text-slate-900 mb-6">L'érosion des marges par les intermédiaires de réservation.</h3>
+                        <div class="space-y-6 text-slate-600 leading-relaxed">
+                            <p>Le <strong>Bistrot du Port à La Rochelle</strong>, bien qu'affichant complet, voyait sa rentabilité s'effriter. Environ 80% de ses réservations provenaient de plateformes tierces facturant 15% de commission par couvert.</p>
+                            <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-2xl">
+                                <p class="text-red-900 font-bold mb-2 italic">"Nous travaillions pour payer nos intermédiaires, sans jamais posséder la donnée de nos propres clients."</p>
+                                <p class="text-xs text-red-700">— Témoignage du Gérant (Restauration La Rochelle)</p>
+                            </div>
+                            <p>De plus, l'ancien site web souffrait d'une <strong>dette technique</strong> : trop lent sur mobile et totalement invisible sur les requêtes locales stratégiques comme <em>"meilleur restaurant port La Rochelle"</em>.</p>
+                        </div>
+                    </div>
+                    <div class="relative" data-aos="fade-left">
+                        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800" class="rounded-[3rem] shadow-2xl" alt="Optimisation SEO Restaurant La Rochelle - Bistrot du Port">
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-24 px-6 bg-white">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <h2 class="text-blue-600 font-bold text-sm uppercase tracking-widest mb-4">L'Ingénierie Atlantique Digital</h2>
+                        <h3 class="text-4xl font-extrabold text-slate-900">Méthodologie GEO & Architecture Souveraine.</h3>
+                    </div>
+
+                    <div class="space-y-16">
+                        <div class="flex gap-8 items-start" data-aos="fade-up">
+                            <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-200"><i class="fas fa-server text-2xl"></i></div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-3">Architecture WordPress Haute Performance</h4>
+                                <p class="text-slate-600 leading-relaxed">Développement d'un thème WordPress sur-mesure (Full Site Editing). Utilisation de <strong>Redis pour le caching</strong> et optimisation des <strong>Core Web Vitals</strong> de Google. Résultat : chargement en 0.8s, optimisant le taux de conversion mobile.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-8 items-start" data-aos="fade-up">
+                            <div class="w-16 h-16 bg-slate-900 text-white rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-slate-200"><i class="fas fa-calendar-alt text-2xl"></i></div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-3">Moteur de Réservation sans commission</h4>
+                                <p class="text-slate-600 leading-relaxed">Intégration d'un tunnel de réservation direct via API sécurisée. Le restaurateur reprend le contrôle de sa <strong>base de données client (RGPD)</strong>, éliminant totalement les frais de services tiers.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-8 items-start" data-aos="fade-up">
+                            <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-50"><i class="fas fa-map-marked-alt text-2xl"></i></div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-3">Offensive SEO Local & GEO</h4>
+                                <p class="text-slate-600 leading-relaxed">Optimisation sémantique pour les <strong>moteurs de recherche génératifs (IA)</strong>. Structuration des données pour dominer les résultats de recherche à La Rochelle et être cité comme source fiable par les assistants vocaux et LLMs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <section class="py-24 px-6 bg-slate-900 text-white rounded-[4rem] mx-4 mb-12">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-blue-400 font-bold text-sm uppercase tracking-widest mb-4">Le ROI Digital</h2>
+                        <h3 class="text-4xl font-extrabold mb-8 leading-tight">Un investissement rentabilisé en <span class="text-blue-400">90 jours.</span></h3>
+                        <div class="grid grid-cols-1 gap-6">
+                            <div class="flex items-center gap-4 bg-white/5 p-6 rounded-3xl border border-white/10">
+                                <div class="text-3xl font-black text-blue-400">95%</div>
+                                <p class="text-sm text-slate-300 italic">Part des réservations directes via le nouveau site WordPress.</p>
+                            </div>
+                            <div class="flex items-center gap-4 bg-white/5 p-6 rounded-3xl border border-white/10">
+                                <div class="text-3xl font-black text-blue-400">+1.2k</div>
+                                <p class="text-sm text-slate-300 italic">Fiches clients qualifiées collectées en 6 mois (Marketing Direct).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-10 rounded-[3rem] text-slate-900 shadow-2xl shadow-blue-500/10">
+                        <i class="fas fa-quote-left text-4xl text-blue-100 mb-6"></i>
+                        <p class="text-lg font-medium leading-relaxed mb-8 italic">
+                            "Atlantique Digital n'a pas seulement refait un site, ils ont rééquilibré notre modèle économique. L'économie sur les commissions finance désormais tout notre budget digital annuel."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center font-bold text-blue-600">JMT</div>
+                            <div>
+                                <p class="font-bold">Jean-Marc T.</p>
+                                <p class="text-xs text-slate-500 uppercase font-black tracking-widest">Direction, Bistrot du Port La Rochelle</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-6 max-w-4xl mx-auto">
+            <h3 class="text-2xl font-black mb-12 text-center italic">Questions fréquentes sur ce projet</h3>
+            <div class="space-y-8">
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Comment réduire les commissions de réservation pour un restaurant ?</h4>
+                    <p class="text-slate-600 text-sm">En intégrant un système de réservation propriétaire sur WordPress, vous éliminez les intermédiaires. Dans le cas du Bistrot du Port, l'économie a été de 1500€ par mois.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-2">Pourquoi le SEO Local est-il vital à La Rochelle ?</h4>
+                    <p class="text-slate-600 text-sm">La concurrence touristique en Charente-Maritime impose une visibilité parfaite sur Google Maps et sur les requêtes géo-localisées pour capter le trafic direct.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-6 text-center">
+    <div class="max-w-2xl mx-auto">
+        <h3 class="text-3xl font-extrabold mb-6">Prêt à reprendre le contrôle de votre visibilité ?</h3>
+        <p class="text-slate-600 mb-10">Comme le Bistrot du Port, transformez votre site web en un actif financier rentable grâce à l'expertise <strong>Atlantique Digital</strong>.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="index.html#contact" class="bg-blue-600 text-white px-10 py-5 rounded-2xl font-extrabold uppercase tracking-widest text-xs shadow-xl shadow-blue-100 hover:-translate-y-1 transition-all">
+                Démarrer un audit SEO Gratuit
+            </a>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer class="pt-4 pb-6 text-center text-[10px] font-black uppercase tracking-[0.5em] text-slate-400 border-t border-slate-50/10">
+        © 2026 Atlantique Digital | Performance WordPress Haute Performance
+    </footer>
+
+    <button id="backToTop" class="fixed bottom-8 right-8 z-[150] bg-blue-600 text-white w-12 h-12 rounded-2xl shadow-2xl flex items-center justify-center transform translate-y-24 opacity-0 transition-all duration-500 hover:bg-slate-900">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // A. INITIALISATION AOS
+        // Lance les animations d'apparition des éléments
+        AOS.init({ duration: 1000, once: true });
+
+        // B. GESTION DU MENU MOBILE (BURGER) - VERSION CORRIGÉE
+const mobileMenu = document.getElementById('mobileMenu'); // Vérifie bien que c'est mobileMenu sans tiret
+const menuOpen = document.getElementById('menu-open');
+const menuClose = document.getElementById('menu-close');
+
+// On récupère tous les liens à l'intérieur du menu mobile pour fermeture auto
+const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+
+// Fonction pour ouvrir le menu
+if (menuOpen && mobileMenu) {
+    menuOpen.addEventListener('click', (e) => {
+        e.preventDefault();
+        mobileMenu.classList.remove('translate-x-full', 'opacity-0', 'pointer-events-none');
+        // On s'assure qu'il est bien visible
+        mobileMenu.classList.add('translate-x-0', 'opacity-100');
+        document.body.style.overflow = 'hidden'; 
+    });
+}
+
+// Fonction pour fermer le menu
+if (menuClose && mobileMenu) {
+    menuClose.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full', 'opacity-0', 'pointer-events-none');
+        mobileMenu.classList.remove('translate-x-0', 'opacity-100');
+        document.body.style.overflow = ''; 
+    });
+}
+
+// Fermeture automatique quand on clique sur un lien (Portfolio, Services...)
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full', 'opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+    });
+});
+
+        // C. GESTION DU BOUTON RETOUR EN HAUT
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        if (backToTopBtn) {
+            window.addEventListener('scroll', () => {
+                // Si on a scrollé plus de 500px, on affiche le bouton
+                if (window.scrollY > 500) {
+                    backToTopBtn.classList.remove('translate-y-24', 'opacity-0');
+                    backToTopBtn.classList.add('translate-y-0', 'opacity-100');
+                } else {
+                    // Sinon on le cache à nouveau
+                    backToTopBtn.classList.remove('translate-y-0', 'opacity-100');
+                    backToTopBtn.classList.add('translate-y-24', 'opacity-0');
+                }
+            });
+
+            // Action de remonter en haut de page
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // D. ANIMATION DES COMPTEURS (STATISTIQUES)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const endValue = parseInt(target.getAttribute('data-target'));
+                    let startValue = 0;
+                    const duration = 2000; 
+                    const step = endValue / (duration / 16);
+
+                    const updateCount = () => {
+                        startValue += step;
+                        if (startValue < endValue) {
+                            target.innerText = Math.ceil(startValue);
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            target.innerText = endValue;
+                        }
+                    };
+                    updateCount();
+                    observer.unobserve(target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // On active l'observateur sur les chiffres
+        document.querySelectorAll('.stat-number').forEach(stat => observer.observe(stat));
+    </script>
+</body>
+</html>
