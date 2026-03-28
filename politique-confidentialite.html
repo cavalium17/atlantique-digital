@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocole de Confidentialité & Data Privacy | Atlantique Digital (17)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<style>
+    /* 1. On charge la police Google */
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+    /* 2. On l'applique au corps de la page et aux éléments de texte */
+    body, html, nav, footer, button, a {
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+    }
+
+    /* 3. LA SÉCURITÉ : On interdit à la police Jakarta d'écraser les icônes */
+    .fas, .fab, .far, .fa {
+        font-family: "Font Awesome 6 Free" !important;
+        font-weight: 900 !important;
+    }
+</style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+
+    <nav class="fixed w-full z-[100] glass-nav py-5 px-6">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-slate-900 rounded-2xl flex items-center justify-center shadow-2xl rotate-3 hover:rotate-0 transition-transform">
+                <svg viewBox="0 0 40 40" class="w-7 h-7 stroke-white fill-none">
+                    <path d="M10 28L20 12L30 28" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-xl font-extrabold tracking-tighter text-slate-900 block leading-none">
+                    ATLANTIQUE<span class="text-emerald-500">DIGITAL</span>
+                </span>
+                <span class="text-[10px] uppercase font-black tracking-[0.3em] text-slate-400">
+                    Agence Web
+                </span>
+            </div>
+        </div>
+
+        <!-- Partie droite -->
+        <div class="flex items-center gap-4">
+
+            <!-- Menu desktop -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#services" class="text-[11px] font-black uppercase tracking-widest text-slate-500 hover:text-blue-600 transition">Services</a>
+                <a href="#realisations" class="text-[11px] font-black uppercase tracking-widest text-slate-500 hover:text-blue-600 transition">Portfolio</a>
+                <a href="#tarifs" class="text-[11px] font-black uppercase tracking-widest text-slate-500 hover:text-blue-600 transition">Tarifs</a>
+                <a href="#faq" class="text-[11px] font-black uppercase tracking-widest text-slate-500 hover:text-blue-600 transition">FAQ</a>
+                <a href="#contact" class="bg-slate-900 text-white px-7 py-3 rounded-full text-[11px] font-black uppercase tracking-widest hover:bg-blue-600 transition-colors shadow-xl">
+                    Audit Offert
+                </a>
+            </div>
+
+            <!-- Burger mobile -->
+            <button id="menu-open" class="md:hidden text-slate-900 text-2xl relative z-50">
+                <i class="fas fa-bars"></i>
+            </button>
+
+        </div>
+
+    </div>
+</nav>
+<div id="mobileMenu" aria-hidden="true"
+class="fixed inset-0 bg-slate-900/95 backdrop-blur-2xl z-[200] flex flex-col 
+transition-all duration-500 ease-out transform translate-x-full opacity-0 pointer-events-none md:hidden">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center p-6 border-b border-white/10">
+    <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center shadow-2xl rotate-3 hover:rotate-0 transition-transform">
+            <svg viewBox="0 0 40 40" class="w-7 h-7 stroke-white fill-none">
+                <path d="M10 28L20 12L30 28" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        
+        <div class="flex flex-col">
+            <span class="text-xl font-extrabold tracking-tighter text-white block leading-none uppercase">
+                ATLANTIQUE<span class="text-blue-400">DIGITAL</span>
+            </span>
+            <span class="text-[10px] uppercase font-black tracking-[0.3em] text-slate-400">
+                Agence Web
+            </span>
+        </div>
+    </div>
+
+    <button id="menu-close" class="text-white hover:text-blue-400 transition-colors">
+        <i class="fas fa-times text-2xl"></i>
+    </button>
+</div>
+
+    <!-- CONTENU -->
+    <div class="flex-1 overflow-y-auto px-6 py-8 flex flex-col gap-8">
+
+        <!-- 🔴 BADGE URGENCE -->
+        <div class="bg-blue-600/20 border border-blue-500/30 rounded-2xl p-4">
+            <div class="flex items-center gap-2 text-blue-400 text-xs font-bold uppercase mb-1">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                Disponible cette semaine
+            </div>
+            <p class="text-white text-sm font-medium">Audit gratuit ouvert</p>
+        </div>
+
+        <!-- ⚡ SELECTEUR DE DOULEUR -->
+        <div class="grid gap-3">
+            <p class="text-white/50 text-[10px] font-bold uppercase tracking-wider">Besoin urgent ?</p>
+
+            <a href="index.html#contact" class="mobile-link bg-white text-slate-900 p-4 rounded-xl font-bold text-sm flex items-center gap-3">
+                <i class="fas fa-biohazard text-red-500"></i>
+                Mon site est lent ou piraté
+            </a>
+
+            <a href="index.html#contact" class="mobile-link bg-slate-800 text-white p-4 rounded-xl font-bold text-sm flex items-center gap-3 border border-white/10">
+                <i class="fas fa-magic text-blue-400"></i>
+                Je veux apparaître sur l'IA
+            </a>
+        </div>
+
+        <!-- 📱 NAV CLASSIQUE -->
+        <nav class="flex flex-col gap-6 text-white text-lg font-bold">
+            <a href="index.html#services" class="mobile-link flex justify-between">Services <i class="fas fa-chevron-right text-blue-500"></i></a>
+            <a href="index.html#realisations" class="mobile-link flex justify-between">Portfolio <i class="fas fa-chevron-right text-blue-500"></i></a>
+            <a href="index.html#tarifs" class="mobile-link flex justify-between">Tarifs <i class="fas fa-chevron-right text-blue-500"></i></a>
+            <a href="index.html#faq" class="mobile-link flex justify-between">FAQ <i class="fas fa-chevron-right text-blue-500"></i></a>
+        </nav>
+
+        <!-- 📞 CONTACT + PREUVE -->
+        <div class="mt-auto pt-8 border-t border-white/10 flex flex-col gap-6">
+
+            <!-- Bouton appel -->
+            <a href="index.html#contact" class="mobile-link bg-blue-600 text-white w-full py-4 rounded-2xl font-bold text-center flex items-center justify-center gap-3">
+                <i class="fas fa-phone-alt"></i>
+                Appeler un expert
+            </a>
+
+            <!-- Preuve sociale -->
+            <div class="text-center">
+                <div class="flex justify-center gap-1 text-yellow-400 mb-1">
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                </div>
+                <p class="text-white/60 text-[10px] font-medium italic">
+                    "Réactif et ultra efficace" - 4.9/5 clients locaux
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+    <main class="py-24">
+        <div class="max-w-5xl mx-auto px-8">
+            
+            <header class="mb-20 border-b-4 border-emerald-500 pb-12">
+                <h1 class="text-4xl md:text-6xl font-black break-words leading-tight">
+    POLITIQUE <span class="text-emerald-500">DE CONFIDENTIALITÉ.</span>
+</h1>
+                <div class="flex flex-wrap gap-4 items-center">
+                    <span class="bg-emerald-900 text-white text-[9px] font-black px-4 py-2 rounded-full uppercase tracking-widest italic">Standard RGPD 2026.4</span>
+                    <span class="text-slate-400 text-[10px] font-bold uppercase tracking-widest italic">Applicable au Territoire de Charente-Maritime</span>
+                </div>
+            </header>
+
+            <div class="space-y-16">
+
+    <section class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-xl border border-slate-100">
+    <div class="flex items-center gap-4 mb-6">
+        <span class="bg-slate-900 text-white w-10 h-10 rounded-full flex items-center justify-center font-black italic">01</span>
+        <h2 class="text-2xl font-black uppercase italic tracking-tighter text-slate-900">Responsable du Traitement</h2>
+    </div>
+    <p class="text-sm font-medium text-slate-600 leading-relaxed mb-6">
+        Le site <strong>atlantiquedigital.fr</strong> est édité par l'agence Atlantique Digital. Le responsable de la protection des données (DPO) assure la conformité des flux de données collectés sur le territoire de la Charente-Maritime.
+    </p>
+    <div class="bg-slate-50 p-6 rounded-2xl border-l-4 border-emerald-500">
+        <p class="text-[11px] font-black uppercase tracking-widest text-slate-400 mb-2">Contact DPO Direct</p>
+        <p class="text-sm font-bold text-slate-900">Email : dpo@atlantiquedigital.fr</p>
+    </div>
+</section>
+
+<section class="grid md:grid-cols-2 gap-8">
+    <div class="bg-slate-900 p-10 rounded-[3rem] text-white">
+        <h3 class="text-lg font-black uppercase italic text-emerald-400 mb-6 tracking-widest">Données Collectées</h3>
+        <ul class="text-sm font-bold space-y-4 italic">
+            <li class="flex justify-between border-b border-white/10 pb-2"><span>Identité Digitale</span> <span class="text-emerald-400">Nom / Prénom</span></li>
+            <li class="flex justify-between border-b border-white/10 pb-2"><span>Contact Direct</span> <span class="text-emerald-400">Tél / WhatsApp</span></li>
+            <li class="flex justify-between border-b border-white/10 pb-2"><span>Données Logs</span> <span class="text-emerald-400">IP / Cookies</span></li>
+        </ul>
+    </div>
+    <div class="bg-white p-10 rounded-[3rem] border border-slate-100 shadow-sm italic">
+        <h3 class="text-lg font-black uppercase italic text-slate-900 mb-6 tracking-widest">Finalités Lex</h3>
+        <p class="text-sm font-medium text-slate-600 leading-relaxed mb-4">Vos données sont traitées pour :</p>
+        <ul class="text-sm font-bold text-slate-800 space-y-2">
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i> Établissement de l'Audit Offert</li>
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i> Maintenance WordPress proactive</li>
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i> Sécurisation des terminaux</li>
+        </ul>
+    </div>
+</section>
+
+<section class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-xl border border-slate-100">
+    <div class="flex items-center gap-4 mb-6">
+        <span class="bg-slate-900 text-white w-10 h-10 rounded-full flex items-center justify-center font-black italic">03</span>
+        <h2 class="text-2xl font-black uppercase italic tracking-tighter text-slate-900">Infrastructure & Tiers</h2>
+    </div>
+    <p class="text-sm font-medium text-slate-600 leading-relaxed mb-6">
+        L'hébergement du site est assuré par <strong>OVH SAS</strong> (Siège : Roubaix, France). Les données sont stockées exclusivement en Union Européenne. Les transferts via <strong>WhatsApp</strong> (Meta) et <strong>Google Analytics</strong> sont régis par les clauses contractuelles types de l'UE.
+    </p>
+</section>
+
+<section class="bg-emerald-500 p-8 md:p-12 rounded-[2.5rem] text-white shadow-2xl">
+    <h2 class="text-2xl font-black uppercase italic tracking-tighter mb-8 text-center">Vos Droits Inaliénables (Art. 15-22 RGPD)</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <div class="bg-white/10 p-4 rounded-xl border border-white/20">
+            <p class="text-[9px] font-black uppercase mb-1">Accès</p>
+            <p class="text-[10px]">Consulter vos données</p>
+        </div>
+        <div class="bg-white/10 p-4 rounded-xl border border-white/20">
+            <p class="text-[9px] font-black uppercase mb-1">Oubli</p>
+            <p class="text-[10px]">Suppression totale</p>
+        </div>
+        <div class="bg-white/10 p-4 rounded-xl border border-white/20">
+            <p class="text-[9px] font-black uppercase mb-1">Portabilité</p>
+            <p class="text-[10px]">Récupérer vos fichiers</p>
+        </div>
+        <div class="bg-white/10 p-4 rounded-xl border border-white/20">
+            <p class="text-[9px] font-black uppercase mb-1">Opposition</p>
+            <p class="text-[10px]">Arrêt du traitement</p>
+        </div>
+    </div>
+</section>
+
+</section> </div> </main> <footer id="footer" class="py-12 bg-white border-t border-slate-100 w-full">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-10">
+
+                <div class="text-xl font-black tracking-tighter uppercase">
+                <span class="text-xl font-extrabold tracking-tighter text-slate-900 block leading-none">
+                    ATLANTIQUE<span class="text-emerald-500">DIGITAL</span>
+                </span>
+                    <span class="block text-[9px] font-bold text-slate-400 not-italic tracking-[0.2em] mt-1">
+                        Rochefort • La Rochelle • Saintes
+                    </span>
+                </div>
+
+                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-[10px] font-black uppercase tracking-widest text-slate-500">
+                    <a href="index.html#services" class="hover:text-blue-600 transition-colors italic">Création 0€</a>
+                    <a href="index.html#services" class="hover:text-blue-600 transition-colors italic">IA & GEO</a>
+                    <a href="index.html#services" class="hover:text-blue-600 transition-colors italic">Maintenance</a>
+                    <a href="index.html#contact" class="hover:text-blue-600 transition-colors text-emerald-500">Contact Direct</a>
+                </nav>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-8 text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400 border-b border-slate-50 pb-8">
+                <a href="mentions-legales.html" class="hover:text-blue-600 transition-all border-b border-transparent hover:border-blue-600 pb-1">Mentions Légales</a>
+                <a href="politique-confidentialite.html" class="text-emerald-500 font-bold hover:text-emerald-600 transition-all border-b border-emerald-500/30 pb-1"> Confidentialité (RGPD) </a>
+                <a href="cgv.html" class="hover:text-blue-600 transition-all border-b border-transparent hover:border-blue-600 pb-1">CGV & Abonnements</a>
+            </div>
+
+            <div class="text-center text-[10px] font-black uppercase tracking-[0.5em] text-slate-400">
+                © 2026 Atlantique Digital | Performance WordPress Haute Performance
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="fixed bottom-8 right-8 z-[150] bg-emerald-500 text-white w-12 h-12 rounded-2xl shadow-2xl flex items-center justify-center transform translate-y-24 opacity-0 transition-all duration-500 hover:bg-slate-900">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // A. INITIALISATION AOS
+        // Lance les animations d'apparition des éléments
+        AOS.init({ duration: 1000, once: true });
+
+        // B. GESTION DU MENU MOBILE (BURGER) - VERSION CORRIGÉE
+const mobileMenu = document.getElementById('mobileMenu'); // Vérifie bien que c'est mobileMenu sans tiret
+const menuOpen = document.getElementById('menu-open');
+const menuClose = document.getElementById('menu-close');
+
+// On récupère tous les liens à l'intérieur du menu mobile pour fermeture auto
+const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+
+// Fonction pour ouvrir le menu
+if (menuOpen && mobileMenu) {
+    menuOpen.addEventListener('click', (e) => {
+        e.preventDefault();
+        mobileMenu.classList.remove('translate-x-full', 'opacity-0', 'pointer-events-none');
+        // On s'assure qu'il est bien visible
+        mobileMenu.classList.add('translate-x-0', 'opacity-100');
+        document.body.style.overflow = 'hidden'; 
+    });
+}
+
+// Fonction pour fermer le menu
+if (menuClose && mobileMenu) {
+    menuClose.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full', 'opacity-0', 'pointer-events-none');
+        mobileMenu.classList.remove('translate-x-0', 'opacity-100');
+        document.body.style.overflow = ''; 
+    });
+}
+
+// Fermeture automatique quand on clique sur un lien (Portfolio, Services...)
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full', 'opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+    });
+});
+
+        // C. GESTION DU BOUTON RETOUR EN HAUT
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        if (backToTopBtn) {
+            window.addEventListener('scroll', () => {
+                // Si on a scrollé plus de 500px, on affiche le bouton
+                if (window.scrollY > 500) {
+                    backToTopBtn.classList.remove('translate-y-24', 'opacity-0');
+                    backToTopBtn.classList.add('translate-y-0', 'opacity-100');
+                } else {
+                    // Sinon on le cache à nouveau
+                    backToTopBtn.classList.remove('translate-y-0', 'opacity-100');
+                    backToTopBtn.classList.add('translate-y-24', 'opacity-0');
+                }
+            });
+
+            // Action de remonter en haut de page
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // D. ANIMATION DES COMPTEURS (STATISTIQUES)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const endValue = parseInt(target.getAttribute('data-target'));
+                    let startValue = 0;
+                    const duration = 2000; 
+                    const step = endValue / (duration / 16);
+
+                    const updateCount = () => {
+                        startValue += step;
+                        if (startValue < endValue) {
+                            target.innerText = Math.ceil(startValue);
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            target.innerText = endValue;
+                        }
+                    };
+                    updateCount();
+                    observer.unobserve(target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // On active l'observateur sur les chiffres
+        document.querySelectorAll('.stat-number').forEach(stat => observer.observe(stat));
+    </script>
+</body>
+</html>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // A. INITIALISATION AOS
+        // Lance les animations d'apparition des éléments
+        AOS.init({ duration: 1000, once: true });
+
+        // B. GESTION DU MENU MOBILE (BURGER) - VERSION CORRIGÉE
+const mobileMenu = document.getElementById('mobileMenu'); // Vérifie bien que c'est mobileMenu sans tiret
+const menuOpen = document.getElementById('menu-open');
+const menuClose = document.getElementById('menu-close');
+
+// On récupère tous les liens à l'intérieur du menu mobile pour fermeture auto
+const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+
+// Fonction pour ouvrir le menu
+if (menuOpen && mobileMenu) {
+    menuOpen.addEventListener('click', (e) => {
+        e.preventDefault();
+        mobileMenu.classList.remove('translate-x-full', 'opacity-0', 'pointer-events-none');
+        // On s'assure qu'il est bien visible
+        mobileMenu.classList.add('translate-x-0', 'opacity-100');
+        document.body.style.overflow = 'hidden'; 
+    });
+}
+
+// Fonction pour fermer le menu
+if (menuClose && mobileMenu) {
+    menuClose.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full', 'opacity-0', 'pointer-events-none');
+        mobileMenu.classList.remove('translate-x-0', 'opacity-100');
+        document.body.style.overflow = ''; 
+    });
+}
+
+// Fermeture automatique quand on clique sur un lien (Portfolio, Services...)
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full', 'opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+    });
+});
+
+        // C. GESTION DU BOUTON RETOUR EN HAUT
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        if (backToTopBtn) {
+            window.addEventListener('scroll', () => {
+                // Si on a scrollé plus de 500px, on affiche le bouton
+                if (window.scrollY > 500) {
+                    backToTopBtn.classList.remove('translate-y-24', 'opacity-0');
+                    backToTopBtn.classList.add('translate-y-0', 'opacity-100');
+                } else {
+                    // Sinon on le cache à nouveau
+                    backToTopBtn.classList.remove('translate-y-0', 'opacity-100');
+                    backToTopBtn.classList.add('translate-y-24', 'opacity-0');
+                }
+            });
+
+            // Action de remonter en haut de page
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // D. ANIMATION DES COMPTEURS (STATISTIQUES)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const endValue = parseInt(target.getAttribute('data-target'));
+                    let startValue = 0;
+                    const duration = 2000; 
+                    const step = endValue / (duration / 16);
+
+                    const updateCount = () => {
+                        startValue += step;
+                        if (startValue < endValue) {
+                            target.innerText = Math.ceil(startValue);
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            target.innerText = endValue;
+                        }
+                    };
+                    updateCount();
+                    observer.unobserve(target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // On active l'observateur sur les chiffres
+        document.querySelectorAll('.stat-number').forEach(stat => observer.observe(stat));
+    </script>
+</body>
+</html>
