@@ -1,0 +1,16 @@
+# Chers robots, bienvenue chez Atlantique Digital !
+User-agent: *
+Allow: /
+
+# Autoriser spécifiquement les crawlers d'IA pour le GEO
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Indication cruciale de votre sitemap pour Google et les IA
+Sitemap: https://atlantiquedigital.fr/sitemap.xml
